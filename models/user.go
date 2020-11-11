@@ -15,7 +15,25 @@ type User struct {
 	Password string `form:"password"`
 	Time string `form:"time"`
 	Dianhua string `form:"dianhua"`
+	Card     string `form:"card"` //身份证号
+	Sex      string `form:"sex"`//性别
 }
+
+//该方法用于更新数据库中用户记录的实名认证信息
+func (u User) UpdateUser() (int64, error) {
+	rs, err := database.Db.Exec("update user set name = ?, card = ?, sex = ? where dianhua = ?", u.Name, u.Card, u.Dianhua,u.Sex)
+	if err != nil {
+		return -1, err
+	}
+	id, err := rs.RowsAffected()
+	if err != nil {
+		return -1, err
+	}
+	return id, nil
+}
+
+
+
 
 /*
 保存用信息的方法,保存用户星系到数据库当中
@@ -92,7 +110,7 @@ func (u *User) QueryUser() (*User,error) {
 
 
 
-func (u User) UserByDianhua () (*User,error){
+func (u User) QueryUserByDianhua() (*User,error){
 	row := database.Db.QueryRow("select id from user where dianhua = ?",u.Dianhua,u.Password,u.Name,u.UserId,u.Time)
 	err:= row.Scan(&u.UserId)
 	if err != nil {

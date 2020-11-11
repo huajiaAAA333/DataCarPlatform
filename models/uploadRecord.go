@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+//上传文件的记录
 type UploadRecord struct {
 	ID int
 	UserID int
@@ -19,7 +20,7 @@ type UploadRecord struct {
 把一条认证数据保存到表中
  */
 
-func (u*UploadRecord) SaveRecord()(int64, error ) {
+func (u UploadRecord) SaveRecord()(int64, error ) {
 	rs,err := database.Db.Exec("insert into upload_record(user_id,file_name,file_size,file_cert,file_titel,time) "+
 		"values(?,?,?,?,?,?)")
 	if err != nil {

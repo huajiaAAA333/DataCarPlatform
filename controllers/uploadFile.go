@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"DataCerPlatfomr/blockchain"
 	"DataCerPlatfomr/models"
 	"DataCerPlatfomr/utils"
 	"fmt"
@@ -19,10 +20,9 @@ type UploadFile struct {
 //该post方法用于处理用户在客户端提交认证文件
 
 func (u *UploadFile) Post() {
-
+	//1.解析用户上传的数据
 	dianhua := u.Ctx.Request.PostFormValue("dianhua") //获取用户的电话信息
 
-	//1.解析用户上传的数据
 	//用户上传的自定义的标题
 	title := u.Ctx.Request.PostFormValue("upload_title") //用户输入的标题
 	fmt.Println("电子数据标签:", title)
@@ -36,21 +36,8 @@ func (u *UploadFile) Post() {
 	}
 	defer file.Close() //延迟执行,
 
-	//使用io包提供保存文件的方法
-	//io.Copy: dst :数据复制的目的地 src:数据源
-	//	//返回值,复制的长度
+
 	saveFilePath := "static/upload/" + header.Filename
-	//saveFile,err := os.OpenFile(saveFilePath,os.O_CREATE|os.O_RDWR,777)
-	//if err!= nil {
-	//	u.Ctx.WriteString("文件认证保存失败")
-	//	return
-	//}
-	////saveFile.Write()
-	//_,err = io.Copy(saveFile,file)
-	//if err!= nil  {
-	//	u.Ctx.WriteString("抱歉,,电子认证数据是啊比,请重新尝试!")
-	//	return
-	//}
 	_, err = utils.SaveFile(saveFilePath, file)
 	if err != nil {
 		u.Ctx.WriteString("文件数据认证失败,请重试!")
@@ -66,7 +53,7 @@ func (u *UploadFile) Post() {
 	fmt.Println(fileHash)
 
 	//先查询ID
-	user1, err := models.User{Dianhua: dianhua}.UserByDianhua()
+	user1, err := models.User{Dianhua: dianhua}.QueryUserByDianhua()
 	if err != nil {
 		u.Ctx.WriteString("wenjiancuowu")
 
@@ -80,6 +67,16 @@ func (u *UploadFile) Post() {
 		u.Ctx.WriteString("抱歉,电子数据认证失败")
 		return
 	}
+
+	////3.将用户上传的mad5和sha256保存到区块链上,即数据上链
+	//blcok,err = blockchain.CHAIN.SaveData([]byte(md5String))
+	//if err!=nil {
+	//	u.Ctx.WriteString("抱歉,数据上链错误"+err.Error())
+	//	return
+	//}
+
+
+
 	record := models.UploadRecord{
 		UserID:    user1.UserId,
 		FileName:  header.Filename,
@@ -93,6 +90,30 @@ func (u *UploadFile) Post() {
 	_, err = record.SaveRecord()
 	if err != nil {
 		u.Ctx.WriteString("点整认证数据保存失败")
+		return
+	}
+	user := &models.User{
+		Dianhua:  dianhua,
+	}
+
+	user,_ = user.QueryUserByDianhua()
+	fmt.Println("用户的信息：", user.Name, user.Dianhua, user.Card)
+	//③ 将用户上传的文件的md5值和sha256值保存到区块链上，即数据上链
+	certRecord := models.CertRecord{
+		CertId:   []byte(md5String),
+		CertHash: []byte(fileHash),
+		CertName: user.Name,
+		CertCard: user.Card,
+		Dianhua:    user.Dianhua,
+		FileName: header.Filename,
+		FileSize: header.Size,
+		CertTime: time.Now().Unix(),
+	}
+	//序列化
+	certBytes, _ := certRecord.Serialize()
+	_, err = blockchain.CHAIN.SaveData(certBytes)
+	if err != nil {
+		u.Ctx.WriteString("抱歉，数据上链错误：" + err.Error())
 		return
 	}
 	//上传文件保存到数据库中成功

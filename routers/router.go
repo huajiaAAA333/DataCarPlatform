@@ -23,6 +23,16 @@ func init() {
 	//文件上传的接口
 	beego.Router("/home",&controllers.UploadFile{})
 
+	//查看认证数据证书
+	beego.Router("/cert_detail.html",&controllers.CertDetailController{})
+
+	//用户实名认证
+	beego.Router("kyc.html",&controllers.UserKycController{})
+
+
+	//验证码登入
+	beego.Router("login_sms.html",&controllers.LoginSmsController{})
+
 
 
 

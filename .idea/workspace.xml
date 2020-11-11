@@ -16,10 +16,14 @@
     </option>
   </component>
   <component name="GOROOT" path="C:\Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="ProjectId" id="1ifKUOSfRFSH5kWzO7JMne58aYJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -33,19 +37,21 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/DataCertPlatform(3)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DesCOCO" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\goprojrcts\src\DataCerPlatfomr\views" />
-      <recent name="C:\goprojrcts\src\DataCerPlatfomr\static\js" />
+      <recent name="C:\goprojrcts\src\DataCerPlatfomr\static" />
       <recent name="C:\goprojrcts\src\DataCerPlatfomr\static\css" />
+      <recent name="C:\goprojrcts\src\DataCerPlatfomr\static\js" />
       <recent name="C:\goprojrcts\src\DataCerPlatfomr\static\img" />
     </key>
   </component>
@@ -53,7 +59,7 @@
     <configuration name="go build DataCerPlatfomr" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="DataCerPlatfomr" />
       <working_directory value="$PROJECT_DIR$/" />
-      <kind value="PACKAGE" />
+      <kind value="FILE" />
       <filePath value="$PROJECT_DIR$/main.go" />
       <package value="DataCerPlatfomr" />
       <directory value="$PROJECT_DIR$/" />
@@ -106,14 +112,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1602509498349" />
-    <state x="759" y="218" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602331542174">
+    <state x="759" y="218" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603854559522">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="759" y="218" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1602331542174" />
-    <state x="477" y="55" key="#go_build_DataCerPlatfomr" timestamp="1602496135416">
+    <state x="759" y="218" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1603854559522" />
+    <state x="477" y="55" key="#go_build_DataCerPlatfomr" timestamp="1605010816735">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="477" y="55" key="#go_build_DataCerPlatfomr/0.0.1536.824@0.0.1536.824" timestamp="1602496135416" />
+    <state x="477" y="55" key="#go_build_DataCerPlatfomr/0.0.1536.824@0.0.1536.824" timestamp="1605010816735" />
     <state x="477" y="47" key="#go_build_block.go" timestamp="1603191694810">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -126,26 +132,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="477" y="47" key="#go_build_user.go/0.0.1536.824@0.0.1536.824" timestamp="1602566834957" />
-    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1603797388116">
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1605010748352">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603797388116" />
-    <state width="482" height="24" key="GridCell.Tab.0.bottom" timestamp="1603800704376">
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605010748352" />
+    <state width="1493" height="168" key="GridCell.Tab.0.bottom" timestamp="1605094777191">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="482" height="24" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1603800704376" />
-    <state width="482" height="24" key="GridCell.Tab.0.center" timestamp="1603800704376">
+    <state width="1493" height="168" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605094777191" />
+    <state width="1493" height="168" key="GridCell.Tab.0.center" timestamp="1605094777191">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="482" height="24" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1603800704376" />
-    <state width="482" height="24" key="GridCell.Tab.0.left" timestamp="1603800704375">
+    <state width="1493" height="168" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1605094777191" />
+    <state width="1493" height="168" key="GridCell.Tab.0.left" timestamp="1605094777191">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="482" height="24" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1603800704375" />
-    <state width="482" height="24" key="GridCell.Tab.0.right" timestamp="1603800704376">
+    <state width="1493" height="168" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1605094777191" />
+    <state width="1493" height="168" key="GridCell.Tab.0.right" timestamp="1605094777191">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="482" height="24" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1603800704376" />
+    <state width="1493" height="168" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605094777191" />
+    <state x="270" y="55" key="SettingsEditor" timestamp="1605010869753">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1605010869753" />
     <state x="894" y="23" width="642" height="801" key="find.popup" timestamp="1602335049726">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -154,5 +164,16 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="978" y="851" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1603350340436" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://C:/Go/src/runtime/malloc.go</url>
+          <line>1317</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -4,6 +4,7 @@ import (
 	"DataCerPlatfomr/models"
 	"fmt"
 	"github.com/astaxie/beego"
+	"strings"
 )
 
 type Userlogin struct {
@@ -45,6 +46,14 @@ func (l*Userlogin)  Post(){
 	}
 
 
+	//判断用户是否已经实名认证,如果没有则跳转到实名认证页面
+	if strings.TrimSpace(u.Name) == ""||strings.TrimSpace(u.Card) == ""{//两者有其一即视为没有实名认证
+
+		l.Data["dianhua"] = user.Dianhua
+		l.TplName = "kyc.html"
+		return
+
+	}
 
 	//4.根据查询结果返回客户端相应的处理结果信息或者页面跳转
 	l.Data["dianhua"] = u.Dianhua//设置动态数据
